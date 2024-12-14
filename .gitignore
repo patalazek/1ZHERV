@@ -10,6 +10,11 @@
 
 # Visual Studio cache directory
 .vs/
+/data/exe3/IZHV_E2/.vscode
+/data/exe3/IZHV_E3/.vscode
+/data/exe3/IZHV_E4/.vscode
+/data/exe3/IZHV_E5/.vscode
+/data/exe3/IZHV_E6/.vscode
 
 # Gradle cache directory
 .gradle/
