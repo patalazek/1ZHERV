@@ -201,10 +201,27 @@ public class Gun : MonoBehaviour
          * Implement both single shot and shotgun (swap by pressing <SPACE> by default)
          */
         
-        SpawnBullet(
-            new Vector3{ x = 0.0f, y = 0.0f, z = 0.0f }, 
-            Quaternion.Euler(0.0f, 0.0f, 0.0f)
-        );
+        if (shotgun)
+        {
+            Quaternion baseRotation = director.rotation;
+            
+            for (int i = 0; i < shotgunBullets; i++)
+            {
+                // Calculate the spread angle
+                float spreadAngle = UnityEngine.Random.Range(-shotgunSpread / 2, shotgunSpread / 2);
+                Quaternion spreadRotation = baseRotation * Quaternion.Euler(0, 0, spreadAngle);
+                
+                // Spawn the bullet
+                SpawnBullet(director.position, spreadRotation);
+            }
+
+            // Increase cooldown by the number of bullets
+            mCoolDown += 1.0f / (fireRate / 60.0f) * shotgunBullets;
+        }
+        else
+        {
+            SpawnBullet(director.position, director.rotation);
+        }
     }
 
     /// <summary>
