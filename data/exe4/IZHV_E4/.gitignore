@@ -10,11 +10,6 @@
 
 # Visual Studio cache directory
 .vs/
-/data/exe3/IZHV_E2/.vscode
-/data/exe3/IZHV_E3/.vscode
-/data/exe3/IZHV_E4/.vscode
-/data/exe3/IZHV_E5/.vscode
-/data/exe3/IZHV_E6/.vscode
 
 # Gradle cache directory
 .gradle/
@@ -51,5 +46,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-data/exe4/IZHV_E4/.vscode/launch.json
-/data/exe4/IZHV_E4/.vscode
