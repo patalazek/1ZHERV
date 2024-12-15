@@ -111,7 +111,7 @@
                 {
                     "name": "",
                     "id": "b33fdf75-be13-4380-b6b4-47e4a6fd5611",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "GP",
@@ -199,7 +199,7 @@
                 {
                     "name": "",
                     "id": "31809b52-6be6-4236-bef2-a9c9601e9729",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "GP",
@@ -335,6 +335,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "M&K1",
+                    "action": "ToggleShotgun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3cb70413-db1b-4b8b-8851-4697162c916a",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "ToggleShotgun",
                     "isComposite": false,
                     "isPartOfComposite": false

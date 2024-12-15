@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
             // Calculate the direction of the player
             Vector3 direction = (nearestPlayer.transform.position - transform.position);
 
-            // Rotate the enemy to face the player.
+            // Rotate the enemy to face the player
             mRigidBody.velocity = direction.normalized * speed * 2.0f;
             mRigidBody.rotation = Quaternion.LookRotation(direction, Vector3.forward);
         }
