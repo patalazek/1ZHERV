@@ -276,13 +276,6 @@ public class Character2DMovement : MonoBehaviour
 			 *   * Current Animator instance: *animator*
 			 *   * Animator methods: *SetFloat* and *SetBool*
 			 */
-
-            animator.SetFloat("Speed", speed);
-            animator.SetFloat("MoveSpeed", moveSpeed);
-            animator.SetBool("Crouch", crouch);
-            animator.SetBool("Grounded", grounded);
-            animator.SetBool("Jump", jump);
-            animator.SetBool("Fall", falling);
 	    }
     }
 }
