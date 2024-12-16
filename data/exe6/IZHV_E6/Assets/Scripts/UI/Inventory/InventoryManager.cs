@@ -153,9 +153,9 @@ public class InventoryManager : MonoBehaviour
          * this is that whenever we press the button, CreateItem() will
          * be called.
          */
-        
-        
-        
+
+        mItemCreateButton = itemDetails.Q<Button>("ItemDetailButtonCreate");
+        mItemCreateButton.clicked += () => CreateItem();
         
         await UniTask.WaitForEndOfFrame();
 
@@ -389,9 +389,17 @@ public class InventoryManager : MonoBehaviour
         
         if (item == null)
         { // We have no item selected -> Provide some default information.
+            mItemDetailName.text = "No item selected";
+            mItemDetailDescription.text = "Please select an item.";
+            mItemDetailCost.text = "";
+            mItemCreateButton.SetEnabled(false);
         }
         else
         { // We have item selected -> Use the item information.
+            mItemDetailName.text = item.definition.readableName;
+            mItemDetailDescription.text = item.definition.readableDescription;
+            mItemDetailCost.text = item.definition.cost.ToString();
+            mItemCreateButton.SetEnabled(item.definition.cost <= availableCurrency);
         }
         
         selectedItem = item;
@@ -424,6 +432,16 @@ public class InventoryManager : MonoBehaviour
          * it from the cost (itemDefinition.cost) from availableCurrency property.
          * These items are not cheap to make!
          */
+
+        if (selectedItem != null)
+        {
+            if (selectedItem.definition.cost <= availableCurrency)
+            {
+                Instantiate(selectedItem.definition.prefab, createDestination.transform);
+                availableCurrency -= selectedItem.definition.cost;
+                return true;
+            }
+        }
         
         var itemDefinition = selectedItem?.definition;
         
